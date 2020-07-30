@@ -49,22 +49,45 @@ def speed():
   f.write("\npyautogui.click()")
   f.close()
 
+
  def sp2():
+  import os
+  f = open("conf3.py", "a")
+  f.write("\npyautogui.click(clicks=2)")
+  f.close()
+
+
+ def sp3():
   import os
   f = open("conf3.py", "a")
   f.write("\npyautogui.click(clicks=4)")
   f.close()
 
 
+ def sp4():
+  import os
+  f = open("conf3.py", "a")
+  f.write("\npyautogui.click(clicks=5)")
+  f.close()
 
- nn = Label(speed,text="settings",bg="black")
- n = Button(speed,text="11 cps",bg="gray",width=45,height=3,borderwidth=3,command=sp1)
- nnn = Button(speed,text="16 cps",bg="gray",width=45,height=3,borderwidth=3,command=sp2)
+
+
+ help = Label(speed,text="cps = click per second",bg="black",fg="red")
+ nn = Label(speed,text="select speed",bg="black",fg="red",height=4)
+ n = Button(speed,text="4 cps",bg="gray",width=45,height=3,borderwidth=3,command=sp1)
+ nnnn = Button(speed,text="8 cps",bg="gray",width=45,height=3,borderwidth=3,command=sp2)
+ nnn = Button(speed,text="16 cps",bg="gray",width=45,height=3,borderwidth=3,command=sp3)
+ nnnnn = Button(speed,text="test",bg="gray",width=45,height=3,borderwidth=3,command=sp4)
 
 
  reset.pack()
+ nn.pack()
  n.pack()
+ nnnn.pack()
  nnn.pack()
+ nnnnn.pack()
+ help.pack()
+
 
  speed.mainloop()
 
