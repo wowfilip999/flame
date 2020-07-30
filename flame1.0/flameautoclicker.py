@@ -240,24 +240,13 @@ def update():
  update = Tk()
  update.configure(background="black")
  update.geometry("1500x1500")
- update.title("flame")
+ update.title("working on code")
 
  def browser():
-  import requests
-
-  url = "https://github.com/wowfilip999/flame"
-  # just a random link of a dummy file
-
-  r = requests.get(url)
-  # retrieving data from the URL using get method
-
-  with open("flame1.0.zip", 'wb') as f:
-
-   f.write(r.content)
-   # writes the URL contents from the server
+  print("working on this")
 
  text = Label(update,text="updater",font="italic",fg="red",bg="black",height=5)
- t = Button(update,text="update",command=browser,width=45,borderwidth=3,height=2)
+ t = Button(update,text="....",command=browser,width=45,borderwidth=3,height=2)
 
  text.pack()
  t.pack()
