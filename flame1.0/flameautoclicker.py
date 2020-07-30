@@ -18,9 +18,25 @@ def warn():
 
 def minecraft():
  mc = Tk()
- mc.geometry("150x100")
+ mc.geometry("1500x1500")
  mc.configure(background="black")
  mc.title("Flame")
+
+
+
+ def spam():
+  import pyautogui
+  import time
+
+  time.sleep(5)
+  f = open("spam.txt", "r")
+  for word in f:
+     pyautogui.press("t")
+     pyautogui.typewrite(word)
+     pyautogui.press("enter")
+     pyautogui.typewrite(word)
+     pyautogui.press("enter")
+
 
 
 
@@ -36,9 +52,12 @@ def minecraft():
 
 
  txt = Label(mc, fg="red",text="Flame",width=7,bg="black")
- autodrop = Button(mc, fg="black",command=drop,text="autodrop",borderwidth=3,width=7)
+ autodrop = Button(mc, fg="black",command=drop,text="autodrop",borderwidth=3,width=45,height=3,bg="gray")
+ spam = Button(mc, fg="black",command=spam,text="spammer",borderwidth=3,width=45,height=3,bg="gray")
+
  txt.pack()
  autodrop.pack()
+ spam.pack()
  mc.mainloop()
 
 
@@ -62,9 +81,13 @@ def settings():
  set.geometry("1500x1500")
  set.title("Flame")
 
+ def legitset():
+  os.system("python3 legitset.py")
+
+
+
 
  def legit():
-  os.system("python3 timed.py")
   while True:
     os.system("python3 conf3.py")
 
@@ -93,6 +116,15 @@ def settings():
   os.system("python3 timed.py")
   while True:
     pyautogui.click()
+
+ def test():
+  import time
+  os.system("python3 timed.py")
+  while True:
+    pyautogui.click()
+    time.sleep(2)
+    pyautogui.click()
+
 
 
  def timed():
@@ -126,13 +158,13 @@ def settings():
   timed = Tk()
   timed.title("Flame")
   timed.configure(background="black")
-  timed.geometry("150x190")
+  timed.geometry("1500x1500")
 
-  jay = Label(timed, text="Flame 1.0",fg="red",bg="black",width=10)
-  default = Button(timed, bg="gray",text="reset",command=default,width=7,borderwidth=3)
-  option1 = Button(timed, bg="gray",text="3 sec",command=op1,width=7,borderwidth=3)
-  option2 = Button(timed, bg="gray", text="4 sec",command=op2,width=7,borderwidth=3)
-  option3 = Button(timed, bg="gray", text="5 sec",command=op3,width=7,borderwidth=3)
+  jay = Label(timed, text="Flame 1.0",fg="red",bg="black",width=45,height=5)
+  default = Button(timed, bg="gray",text="reset",command=default,width=45,borderwidth=3,height=3)
+  option1 = Button(timed, bg="gray",text="3 sec",command=op1,width=45,borderwidth=3,height=3)
+  option2 = Button(timed, bg="gray", text="4 sec",command=op2,width=45,borderwidth=3,height=3)
+  option3 = Button(timed, bg="gray", text="5 sec",command=op3,width=45,borderwidth=3,height=3)
   jay.pack()
   default.pack()
   option1.pack()
@@ -152,6 +184,8 @@ def settings():
   t = Button(more, text="legit")
   t.pack()
 
+
+
  text = Label(set,text="Flame 1.0",bg="black",fg="red",height=5)
  slow = Button(set,text="slow",bg="gray",command=slow,fg="black",borderwidth=3,width=45,height=3)
  faster = Button(set,text="faster",bg="gray",fg="black",command=faster,borderwidth=3,width=45,height=3)
@@ -161,6 +195,7 @@ def settings():
  timed = Button(set,text="timed",bg="gray",fg="black",command=timed,borderwidth=3,width=45,height=3)
 
 
+
  text.pack()
  slow.pack()
  faster.pack()
@@ -168,6 +203,8 @@ def settings():
  mega.pack()
  legit.pack()
  timed.pack()
+
+
 
  set.mainloop()
 
@@ -214,7 +251,7 @@ def update():
   r = requests.get(url)
   # retrieving data from the URL using get method
 
-  with open("flameautoclicker.py", 'wb') as f:
+  with open("flame1.0.zip", 'wb') as f:
 
    f.write(r.content)
    # writes the URL contents from the server

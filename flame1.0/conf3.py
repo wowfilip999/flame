@@ -1,2 +1,2 @@
 import pyautogui
-pyautogui.click()
+pyautogui.click(clicks=2)
