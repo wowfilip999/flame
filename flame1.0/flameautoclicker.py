@@ -1,6 +1,4 @@
 from tkinter import *
-import pyautogui
-from tkinter import *
 
 import pyautogui
 
@@ -51,13 +49,13 @@ def minecraft():
     pyautogui.press("q")
 
 
- txt = Label(mc, fg="red",text="Flame",width=7,bg="black")
+ txt = Label(mc, fg="red",text="Flame",width=7,bg="black",font="italic")
  autodrop = Button(mc, fg="black",command=drop,text="autodrop",borderwidth=3,width=45,height=3,bg="gray")
  spam = Button(mc, fg="black",command=spam,text="spammer",borderwidth=3,width=45,height=3,bg="gray")
 
  txt.pack()
- autodrop.pack()
- spam.pack()
+ autodrop.place(y=20,x=50)
+ spam.place(y=89,x=50)
  mc.mainloop()
 
 
@@ -88,6 +86,7 @@ def settings():
 
 
  def legit():
+  os.system("python3 timed.py")
   while True:
     os.system("python3 conf3.py")
 
@@ -110,6 +109,10 @@ def settings():
   os.system("python3 timed.py")
   while True:
     pyautogui.click(clicks=5)
+
+
+ def exit():
+  root.destroy()
 
 
  def slow():
@@ -235,18 +238,45 @@ def info():
  contact.pack()
  os.pack()
 
+def help():
+ help = Tk()
+ help.geometry("1500x1500")
+ help.configure(background="black")
+ help.title("help")
+
+ click = Label(help, text="CLICK",bg="black",fg="red",font="italic")
+ clickinfo = Label(help, text="when press this button wiew click modes",bg="black",fg="red",font="arial")
+ clickinfo2 = Label(help, text="modes:",bg="black",fg="red",font="arial")
+ clickinfo3 = Label(help, text="click slow unknow cps",bg="black",fg="red",font="arial")
+ click.place(x=5,y=40)
+ clickinfo.place(x=5,y=70)
+ clickinfo2.place(x=5,y=100)
+ clickinfo3.place(x=5,y=130)
+ help.mainloop()
+
 
 def update():
  update = Tk()
  update.configure(background="black")
  update.geometry("1500x1500")
- update.title("working on code")
+ update.title("flame")
 
  def browser():
-  print("working on this")
+  import requests
+
+  url = "https://github.com/wowfilip999/flame"
+  # just a random link of a dummy file
+
+  r = requests.get(url)
+  # retrieving data from the URL using get method
+
+  with open("flame1.0.zip", 'wb') as f:
+
+   f.write(r.content)
+   # writes the URL contents from the server
 
  text = Label(update,text="updater",font="italic",fg="red",bg="black",height=5)
- t = Button(update,text="....",command=browser,width=45,borderwidth=3,height=2)
+ t = Button(update,text="update",command=browser,width=45,borderwidth=3,height=2)
 
  text.pack()
  t.pack()
@@ -254,18 +284,24 @@ def update():
  update.mainloop()
 
 
-a = Label(root, text="flame autoclicker",fg="red",bg="black",height=5,font="italic")
-b = Button(root, text="click",command=settings,fg="black",width=45,height=3,bg="gray",borderwidth=3)
-t = Button(root, text="warn",command=warn,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-tt = Button(root, text="minecraft",command=minecraft,bg="gray",fg="black",width=45,height=3,borderwidth=3)
+text = Label(root, text="flame autoclicker",fg="red",bg="black",height=5,font="italic")
+click = Button(root, text="click",command=settings,fg="black",width=45,height=3,bg="gray",borderwidth=3)
+warn = Button(root, text="warn",command=warn,bg="gray",fg="black",width=45,height=3,borderwidth=3)
+minecraft = Button(root, text="minecraft",command=minecraft,bg="gray",fg="black",width=45,height=3,borderwidth=3)
 info = Button(root, text="info",command=info,bg="gray",fg="black",width=45,height=3,borderwidth=3)
 update = Button(root, text="update",command=update,bg="gray",fg="black",width=45,height=3,borderwidth=3)
 style = Button(root, text="style",command=style,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-a.pack()
-b.pack()
-t.pack()
-tt.pack()
+exit = Button(root, text="exit",command=exit,bg="gray",fg="black",width=45,height=3,borderwidth=3)
+creator  = Label(root, text="by wowfilip999",bg="black",fg="red")
+help  = Button(root, text="?",command=help,bg="white",fg="black",width=1,height=1,borderwidth=2)
+text.pack()
+click.pack()
+warn.pack()
+minecraft.pack()
 info.pack()
 update.pack()
 style.pack()
+exit.pack()
+help.place(x=1250,y=670)
+creator.place(x=5,y=670)
 root.mainloop()
