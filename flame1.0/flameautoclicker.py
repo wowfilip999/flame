@@ -54,8 +54,8 @@ def minecraft():
  spam = Button(mc, fg="black",command=spam,text="spammer",borderwidth=3,width=45,height=3,bg="gray")
 
  txt.pack()
- autodrop.place(y=20,x=50)
- spam.place(y=89,x=50)
+ autodrop.place(y=40,x=450)
+ spam.place(y=110,x=450)
  mc.mainloop()
 
 
@@ -187,6 +187,8 @@ def settings():
   t = Button(more, text="legit")
   t.pack()
 
+ def slowmore():
+  print("test")
 
 
  text = Label(set,text="Flame 1.0",bg="black",fg="red",height=5)
@@ -196,6 +198,7 @@ def settings():
  mega = Button(set,text="mega",bg="gray",fg="black", command=mega,borderwidth=3,width=45,height=3)
  legit = Button(set,text="legit",bg="gray",fg="black",command=legit,borderwidth=3,width=45,height=3)
  timed = Button(set,text="timed",bg="gray",fg="black",command=timed,borderwidth=3,width=45,height=3)
+ slowmore = Button(set,bg="gray",command=slowmore,height=3,width=0,borderwidth=1)
 
 
 
@@ -206,6 +209,7 @@ def settings():
  mega.pack()
  legit.pack()
  timed.pack()
+ slowmore.place(y=90,x=844)
 
 
 
@@ -284,14 +288,15 @@ def update():
  update.mainloop()
 
 
-text = Label(root, text="flame autoclicker",fg="red",bg="black",height=5,font="italic")
-click = Button(root, text="click",command=settings,fg="black",width=45,height=3,bg="gray",borderwidth=3)
-warn = Button(root, text="warn",command=warn,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-minecraft = Button(root, text="minecraft",command=minecraft,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-info = Button(root, text="info",command=info,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-update = Button(root, text="update",command=update,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-style = Button(root, text="style",command=style,bg="gray",fg="black",width=45,height=3,borderwidth=3)
-exit = Button(root, text="exit",command=exit,bg="gray",fg="black",width=45,height=3,borderwidth=3)
+
+text = Label(root, text="flame autoclicker",fg="red",bg="black",height=5,font="italic",cursor="cross")
+click = Button(root, text="click",command=settings,fg="black",width=45,height=3,bg="gray",borderwidth=3,cursor="cross")
+warn = Button(root, text="warn",command=warn,bg="gray",fg="black",width=45,height=3,borderwidth=3,cursor="cross")
+minecraft = Button(root, text="minecraft",command=minecraft,bg="gray",fg="black",width=45,height=3,borderwidth=3,cursor="cross")
+info = Button(root, text="info",command=info,bg="gray",fg="black",width=45,height=3,borderwidth=3,cursor="cross")
+update = Button(root, text="update",command=update,bg="gray",fg="black",width=45,height=3,borderwidth=3,cursor="cross")
+style = Button(root, text="style",command=style,bg="gray",fg="black",width=45,height=3,borderwidth=3,cursor="cross")
+exit = Button(root, text="exit",command=exit,bg="gray",fg="black",width=45,height=3,borderwidth=3,cursor="cross")
 creator  = Label(root, text="by wowfilip999",bg="black",fg="red")
 help  = Button(root, text="?",command=help,bg="white",fg="black",width=1,height=1,borderwidth=2)
 text.pack()
@@ -304,4 +309,16 @@ style.pack()
 exit.pack()
 help.place(x=1250,y=670)
 creator.place(x=5,y=670)
+
+import os
+os.chdir("/home/filip/Plocha/programovani/python/flame1.0/extesions")
+try:
+    f = open("extesion.py")
+    os.system("python3 extesion.py")
+except IOError:
+    warning = Label(root,text="no extesions loaded",fg="red",bg="black")
+    warning.place(x=1100,y=675)
+
+
+
 root.mainloop()
