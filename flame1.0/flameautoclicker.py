@@ -311,7 +311,7 @@ help.place(x=1250,y=670)
 creator.place(x=5,y=670)
 
 import os
-os.chdir("/home/filip/Plocha/programovani/python/flame1.0/extesions")
+os.chdir("extesions")
 try:
     f = open("extesion.py")
     os.system("python3 extesion.py")
